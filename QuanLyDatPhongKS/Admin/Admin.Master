@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="QuanLyDatPhongKS.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <title><%: Page.Title %> | DreamGame - Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .disabled {
+            pointer-events: none;
+            color: #999;
+            text-decoration: none;
+            cursor: default;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body data-layout="horizontal">
+    <div id="wrapper">
+        <header id="topnav">
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    
+
+                    <!-- LOGO -->
+                    <div class="logo-box">
+                        <a  class="logo text-center">
+                            <span class="logo-lg">
+                                <img src="assets\images\logo-admin3.png" alt="" height="80" width="180">
+                            </span>
+                            <span class="logo-sm">
+                                <img src="assets\images\logo-sm.png" alt="" height="22">
+                            </span>
+                        </a>
+                    </div>
+
+
+                    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+
+                        <li class="d-none d-sm-block">
+                            <div class="app-search">
+                                <div class="app-search-box">
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- end Topbar -->
+
+            <div class="topbar-menu">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            
+                            <li class="has-submenu">
+                                <a href="RoomAlley.aspx" data-ajax="true">
+                                    <i class="mdi mdi-bowling"></i>Phòng khách sạn
+                                </a>
+                                <ul class="submenu">
+                                   <li><a href="RoomAlley.aspx" data-ajax="true">Quản lý phòng</a></li>
+                                   <li><a href="AddBooking.aspx" data-ajax="true">Quản lý đặt lịch</a></li>
+                                    <li><a href="TypeRoom.aspx" data-ajax="true">Quản lý loại phòng</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu" id="parentMenuStaff">
+                                <a id="aStaff" runat="server" href="Staff.aspx" data-ajax="true">
+                                    <i class="mdi mdi-account-group"></i>Nhân viên
+                                </a>
+                                <ul class="submenu">
+                                    <li><a id="aSubMenuStaff" runat="server" href="Staff.aspx" data-ajax="true">Danh sách Nhân viên</a></li>
+                                    <li><a id="aAddSubMenuStaff" runat="server" href="AddStaff.aspx" data-ajax="true">Thêm nhân viên</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a id="aCustomer" runat="server" href="Customer.aspx" data-ajax="true">
+                                    <i class="mdi mdi-diamond-stone"></i>Khách hàng
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="Bill.aspx" id="aBill" runat="server" data-ajax="true">
+                                    <i class="mdi mdi-book-multiple"></i>Hoá đơn
+                                </a>
+                            </li>
+                            <li class="has-submenu" id="parentMenuReport">
+                                <a id="aReport" runat="server" href="#" data-ajax="true"><i class="mdi mdi-chart-areaspline-variant"></i>Thống kê báo cáo
+                                </a>
+                                <ul class="submenu">
+                                    <li><a id="aSubMenuReport" runat="server" href="Report.aspx" data-ajax="true">Tổng quan</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <!-- End navigation menu -->
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+            </div>
+            <!-- end navbar-custom -->
+        </header>
+        <div class="content-page">
+            <div class="content" id="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title"><%: Page.Title %></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="form1" runat="server">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </form>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            2025 &copy; KLTN <a href="#">Nguyễn Văn Tuân </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/js/MainScript.js"></script>
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <asp:ContentPlaceHolder ID="foot" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function logout() {
+            localStorage.clear(); // Xóa dữ liệu lưu trữ trong trình duyệt
+            sessionStorage.clear(); 
+           
+
+            // Chuyển hướng người dùng ra ngoài giao diện admin
+            window.location.href = "/Login.aspx"; 
+        }
+    </script>
+</body>
+</html>

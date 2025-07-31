@@ -1,0 +1,95 @@
+﻿#lblUserName{
+    padding-top:15px;
+}
+.footer {
+    background-color: #000;
+    color: #ccc;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+}
+
+.footer-column {
+    flex: 1 1 20%;
+    margin: 10px;
+    min-width: 200px;
+}
+
+    .footer-column h4 {
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+            .footer-column ul li a {
+                color: #ff4c1e;
+                text-decoration: none;
+            }
+
+                .footer-column ul li a:hover {
+                    text-decoration: underline;
+                }
+
+.footer-form input[type="email"] {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.footer-form button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+    .footer-form button:hover {
+        background-color: #666;
+    }
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+        background-color: #aaa;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+        .footer-social a:hover {
+            background-color: #ff4c1e;
+            color: white;
+        }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #888;
+}

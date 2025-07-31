@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="QuanLyDatPhongKS.SiteMaster" %>
+
+<%@ Register Namespace="System.Web.Optimization" TagPrefix="webopt" Assembly="System.Web.Optimization" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Quản lý đặt phòng khách sạn Hương Ngọc</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Dropdown Menu -->
+    <link rel="stylesheet" href="Content/superfish.css">
+    <!-- Owl Slider -->
+    <!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
+    <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="Content/bootstrap-datepicker.min.css">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="Content/cs-select.css">
+    <link rel="stylesheet" href="Content/cs-skin-border.css">
+
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="Content/themify-icons.css">
+    <!-- Flat Icon -->
+    <link rel="stylesheet" href="Content/flaticon.css">
+    <!-- Icomoon -->
+    <link rel="stylesheet" href="Content/icomoon.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="Content/flexslider.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="Content/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="Scripts/modernizr-2.6.2.min.js"></script>
+    <link href="Content/Footer.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <form runat="server">
+        <div id="fh5co-wrapper">
+            <div id="fh5co-page">
+                <div id="fh5co-header">
+                    <header id="fh5co-header-section">
+                        <div class="container">
+                            <div id="navHeader" class="nav-header" runat="server">
+                                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                                <h1 id="fh5co-logo"><a href="Home.aspx">-HGR-</a></h1>
+                                <nav id="fh5co-menu-wrap" role="navigation">
+                                    <ul class="sf-menu" id="fh5co-primary-menu">
+                                        <li><a class="active" href="Home.aspx">Trang chủ</a></li>
+                                        <li><a href="Service.aspx">Dịch vụ</a></li>
+                                        <li><a href="Contact.aspx">Liên hệ</a></li>
+                                        <li><a href="About.aspx">Về chúng tôi</a></li>
+                                        <li><a href="BookingConfirmation.aspx">Lịch sử đặt phòng</a></li>
+                                        <li>
+                                            <i class="bi bi-door-open-fill"></i>
+                                            <asp:HyperLink ID="btnLogin" runat="server" CssClass="col_2" NavigateUrl="~/Login.aspx">Đăng Nhập</asp:HyperLink>
+                                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="col_2" Text="Thoát" OnClick="btnLogout_Click" Visible="false" />
+                                            <asp:Label ID="lblUserName"  runat="server" CssClass="col_2" ></asp:Label>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+
+                </div>
+
+                <main>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+                
+              <footer class="footer">
+                  <div class="footer-column">
+                    <h4>Về chúng tôi</h4>
+                    <ul>
+                      <li><a href="#">Về chúng tôi</a></li>
+                      <li><a href="#">Dịch vụ của chúng tôi</a></li>
+                      <li><a href="#">Liên hệ với chúng tôi</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="footer-column">
+                    <h4>Thông tin</h4>
+                    <p>Điểm nghỉ chân lí tưởng.</p>
+                  </div>
+
+                  <div class="footer-column">
+                    <h4>Đăng ký nhận ưu đãi</h4>
+                    <form class="footer-form">
+                      <input type="email" placeholder="Địa chỉ email"  />
+                      <button type="submit">Gửi</button>
+                    </form>
+                  </div>
+
+                  <div class="footer-column">
+                    <h4>Kết nối với chúng tôi</h4>
+                    <div class="footer-social">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+                  </div>
+
+                  <div class="footer-bottom">
+                    © 2025 Khách sạn Hương Ngọc. Designed by Nguyen Van Tuan.
+                  </div>
+                </footer>
+
+
+            </div>
+
+            <!-- END fh5co-page -->
+
+        </div>
+        <!-- END fh5co-wrapper -->
+    </form>
+    <!-- Javascripts -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <!-- Dropdown Menu -->
+    <script src="Scripts/hoverIntent.js"></script>
+    <script src="Scripts/superfish.js"></script>
+    <!-- Bootstrap -->
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="Scripts/jquery.waypoints.min.js"></script>
+    <!-- Counters -->
+    <script src="Scripts/jquery.countTo.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="Scripts/jquery.stellar.min.js"></script>
+    <!-- Owl Slider -->
+    <!-- // <script src="js/owl.carousel.min.js"></script> -->
+    <!-- Date Picker -->
+    <script src="Scripts/bootstrap-datepicker.min.js"></script>
+    <!-- CS Select -->
+    <script src="Scripts/classie.js"></script>
+    <script src="Scripts/selectFx.js"></script>
+    <!-- Flexslider -->
+    <script src="Scripts/jquery.flexslider-min.js"></script>
+
+    <script src="Scripts/custom.js"></script>
+
+</body>
+</html>
